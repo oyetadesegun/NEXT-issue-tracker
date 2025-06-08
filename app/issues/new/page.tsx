@@ -9,7 +9,7 @@ import { useState } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { createIssueSchema } from '@/app/validationSchema'
 import { z } from 'zod'
-import ErrorMessage from '@/app/components/Errormessage'
+import ErrorMessage from '@/components/ErrorMessage'
 
 type IssueForm = z.infer<typeof createIssueSchema>;
 const NewIssuePage = () => {
