@@ -10,7 +10,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { createIssueSchema } from '@/app/validationSchema'
 import { z } from 'zod'
 import ErrorMessage from '@/app/components/Errormessage'
-import SpinnerH from '@/app/components/SpinnerH'
 
 type IssueForm = z.infer<typeof createIssueSchema>;
 const NewIssuePage = () => {
