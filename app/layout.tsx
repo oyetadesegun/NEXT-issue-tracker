@@ -27,7 +27,7 @@ export default function RootLayout({
           <header>
             <NavBar />
           </header>
-          <main>{children}</main>
+          <main className='mx-8'>{children}</main>
           {/* <ThemePanel/> */}
         </Theme>
 
