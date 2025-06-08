@@ -21,7 +21,7 @@ const NavBar = () => {
       <Link href='/'><AiFillBug /></Link>
 
       <ul className='flex space-x-6 '>
-        {Links.map(link => (<li><Link key={link.url} className={`${currentPath===link.url? 'text-zinc-900 border-b-4 border-blue-300':'text-zinc-500'} hover:text-zinc-800 transition-colors
+        {Links.map(link => (<li key={link.url}><Link className={`${currentPath===link.url? 'text-zinc-900 border-b-4 border-blue-300':'text-zinc-500'} hover:text-zinc-800 transition-colors
        `} href={link.url}>{link.name}</Link></li>))}
       </ul>
 
