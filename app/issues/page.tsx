@@ -1,8 +1,9 @@
 import IssueStatusBadge from "@/components/IssueStatusBadge";
 import prisma from "@/prisma/client";
-import { Table } from "@radix-ui/themes";
+import { Table, Flex } from "@radix-ui/themes";
 import IssueActions from "./IssueActions";
-import Link from "next/link";
+import SortByID from "@/components/SortByID";
+import Link from "@/components/Link";
 
 const IssuePage = async () => {
   const issues = await prisma.issue.findMany()
@@ -14,7 +15,9 @@ const IssuePage = async () => {
         <Table.Row>
           <Table.ColumnHeaderCell>Issue</Table.ColumnHeaderCell>
           <Table.ColumnHeaderCell className="hidden md:table-cell">Status</Table.ColumnHeaderCell>
-          <Table.ColumnHeaderCell className="hidden md:table-cell">Created</Table.ColumnHeaderCell>
+          <Table.ColumnHeaderCell className="hidden md:table-cell">
+            <SortByID>Date Created</SortByID>
+            </Table.ColumnHeaderCell>
         </Table.Row>
         </Table.Header>
         <Table.Body>
