@@ -6,6 +6,8 @@ import IssueStatusBadge from "@/components/IssueStatusBadge"
 interface Props{
     params: {id: string}
 }
+import ReactMarkdown from 'react-markdown'
+
 const IssueDetailPage = async ({params:{id}}:Props) => {
      if (typeof parseInt(id) !== 'number') notFound();
    const issue =  await prisma.issue.findUnique({
@@ -19,8 +21,8 @@ const IssueDetailPage = async ({params:{id}}:Props) => {
           <IssueStatusBadge status={issue.status} />
           <Text className="ml-2">{issue.createdAt.toDateString()}</Text>
       </Flex>
-      <Card>
-      <p>{issue.description}</p>
+      <Card className="prose" mt='4'>
+      <ReactMarkdown>{issue.description}</ReactMarkdown>
       </Card>
     </div>
   )
